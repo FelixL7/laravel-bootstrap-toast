@@ -1,0 +1,29 @@
+{
+    "name": "felixl7/laravel-bootstrap-toast",
+    "description": "",
+    "require": {
+        "php": ">=7.2"
+    },
+    "authors": [
+        {
+            "name": "Felix Lipinski",
+            "email": "info@felixlipinski.de",
+            "homepage": "https://felixlipinski.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "FelixL7\\Toast\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FelixL7\\Toast\\ToastServiceProvider"
+            ],
+            "aliases": {
+                "Toaster": "FelixL7\\Toast\\Facades\\Toaster"
+            }
+        }
+    }
+}
