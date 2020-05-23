@@ -19,7 +19,9 @@ class Toast
         $this->title = $title;
         $this->message = $message;
         $this->type = $type;
-        $this->time = (new \DateTime('now'))->setTimezone(new \DateTimeZone('Europe/Berlin'))->format('H:i');
+
+        $timezone = config('bootstrap-toast.timezone') ?? config('app.timezone');
+        $this->time = (new \DateTime('now'))->setTimezone(new \DateTimeZone($timezone))->format(config('bootstrap-toast.time-format'));
 
         $this->observer = new ToastObserver;
     }

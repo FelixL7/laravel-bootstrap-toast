@@ -13,13 +13,11 @@ class ToastServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //$this->mergeConfigFrom(__DIR__.'/../config/analytics-manager.php', 'analytics-manager');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'bootstrap-toast');
 
         $this->app->singleton('bootstrap-toaster', function($app) {
             return new \FelixL7\Toast\Models\Toaster;
         });
-
-        //dd(session());
     }
 
     /**
@@ -35,9 +33,9 @@ class ToastServiceProvider extends ServiceProvider
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/bootstrap-toast'),
         ], 'views');
 
-        /*$this->publishes([
-            __DIR__.'/../config/analytics-manager.php' => config_path('analytics-manager.php'),
-        ], 'config');*/
+        $this->publishes([
+            __DIR__.'/../config/config.php' => config_path('bootstrap-toast.php'),
+        ], 'config');
 
         $this->publishes([
             __DIR__.'/../public' => public_path('vendor/bootstrap-toast'),

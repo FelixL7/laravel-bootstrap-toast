@@ -7,7 +7,7 @@ This is a simple Bootstrap Toast Package for Laravel.
 ```bash
 composer require felixl7/laravel-bootstrap-toast
 ```
-You can optionally publish the blade templates of this package:
+You can optionally publish the config file and blade templates of this package:
 ```bash
 php artisan vendor:publish --provider="FelixL7\Toast\ToastServiceProvider"
 ```
@@ -42,6 +42,10 @@ wherever you want. Or if you return a redirect in your controller:
 ```php
 return redirect()->with('toasts', [Toast::success('Toast Title', 'Your Message')]);
 ```
+
+## Config
+
+You can customize the toast via the config file. Just publish the packages resources und edit the bootstrap-toast.php file in your config folder.
 
 ## Custom Toasts
 
