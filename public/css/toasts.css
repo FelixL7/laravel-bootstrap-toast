@@ -1,0 +1,20 @@
+.toast .toast-header i.fas {
+  margin-right: 10px;
+}
+
+.toast.success .toast-header {
+  background-color: #afecbd;
+}
+
+.toast.info .toast-header {
+  background-color: #a7e9f4;
+}
+
+.toast.warning .toast-header {
+  background-color: #ffe7a0;
+}
+
+.toast.error .toast-header {
+  background-color: #f6cdd1;
+}
+/*# sourceMappingURL=toasts.css.map */
