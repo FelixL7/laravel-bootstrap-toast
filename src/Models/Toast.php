@@ -19,6 +19,7 @@ class Toast
         $this->title = $title;
         $this->message = $message;
         $this->type = $type;
+        $this->delay = config('bootstrap-toast.base-delay');
 
         $timezone = config('bootstrap-toast.timezone') ?? config('app.timezone');
         $this->time = (new \DateTime('now'))->setTimezone(new \DateTimeZone($timezone))->format(config('bootstrap-toast.time-format'));
@@ -66,6 +67,10 @@ class Toast
         $toast->observeCreated();
 
         return $toast;
+    }
+
+    public function setDelay($delay) {
+        $this->delay = $delay;
     }
 
     private function observeCreated() {
