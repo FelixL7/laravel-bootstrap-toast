@@ -47,3 +47,14 @@ If you want to create some custom toasts, you just have to publish the views of 
 Toast::custom('Toast Title', 'Your Message', 'your-type');
 ```
 'your-type' must be identical with your custom toast template name.
+
+## Links
+
+* [Bootstrap Toasts](https://getbootstrap.com/docs/4.3/components/toasts/)
+* [Laravel](https://laravel.com/)
+* [My Homepage](https://felixlipinski.de/)
+
+## Contact
+
+Any Questions or improvement suggestions? Contact me!
+info@felixlipinski.de

@@ -2,7 +2,8 @@
     "name": "felixl7/laravel-bootstrap-toast",
     "description": "",
     "require": {
-        "php": ">=7.2"
+        "php": ">=7.2",
+        "laravel/framework": "^6.0|^7.0"
     },
     "authors": [
         {
