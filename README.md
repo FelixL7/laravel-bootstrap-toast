@@ -4,6 +4,9 @@ This is a simple Bootstrap Toast Package for Laravel.
 
 ## Installation
 
+```bash
+composer require felixl7/laravel-bootstrap-toast
+```
 You can optionally publish the blade templates of this package:
 ```bash
 php artisan vendor:publish --provider="FelixL7\Toast\ToastServiceProvider"
