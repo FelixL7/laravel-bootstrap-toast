@@ -7,7 +7,7 @@ This is a simple Bootstrap Toast Package for Laravel.
 ```bash
 composer require felixl7/laravel-bootstrap-toast
 ```
-You can optionally publish the config file and blade templates of this package:
+You can optionally publish the config file, public resources and blade templates of this package:
 ```bash
 php artisan vendor:publish --provider="FelixL7\Toast\ToastServiceProvider"
 ```
@@ -45,15 +45,49 @@ return redirect()->with('toasts', [Toast::success('Toast Title', 'Your Message')
 
 ## Config
 
-You can customize the toast via the config file. Just publish the packages resources und edit the bootstrap-toast.php file in your config folder.
+You can customize the toast via the config file. Just publish the packages configuration und edit the bootstrap-toast.php file in your config folder.
+```bash
+php artisan vendor:publish --provider="FelixL7\Toast\ToastServiceProvider" --tag=config
+```
 
 ## Custom Toasts
 
 If you want to create some custom toasts, you just have to publish the views of this package. There you have a toasts folder. Here you can create your own toast types. You can call them by
+
 ```php
 Toast::custom('Toast Title', 'Your Message', 'your-type');
 ```
 'your-type' must be identical with your custom toast template name.
+
+You can customize the design of the toasts by adding css. If you want to use the default styles, you just have to publish the css by 
+
+```bash
+php artisan vendor:publish --provider="FelixL7\Toast\ToastServiceProvider" --tag=public
+```
+
+## Validation Error Toast
+
+If you want to use Toasts in your custom FormRequest you just need to ad this method:
+
+```php
+/**
+    * Handle a failed validation attempt.
+    *
+    * @param  \Illuminate\Contracts\Validation\Validator  $validator
+    * @return void
+    *
+    * @throws \Illuminate\Http\Exceptions\HttpResponseException
+    */
+protected function failedValidation(Validator $validator)
+{
+    throw new HttpResponseException(
+        redirect()->back()
+        ->withInput($this->except($this->dontFlash))
+        ->withErrors($validator)
+        ->with('bootstrap-toasts', [Toast::error('Validation Error', 'The validation of your input failed. Please checkout the validation messages.')])
+    );
+}
+```
 
 ## Links
 
