@@ -3,8 +3,8 @@
     "description": "This is a simple Bootstrap Toast Package for Laravel.",
     "license": "MIT",
     "require": {
-        "php": ">=7.2",
-        "laravel/framework": "^6.0|^7.0"
+        "php": ">=7.3",
+        "illuminate/support": "^8.0"
     },
     "authors": [
         {
